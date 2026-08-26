@@ -1,0 +1,15 @@
+{
+  "blocked_ips": [
+    ""
+  ],
+  "blocked_ports": [],
+  "allowed_ips": [],
+  "rules": [
+    {
+      "type": "block_ip",
+      "target": "",
+      "reason": "manual",
+      "action": "BLOCK"
+    }
+  ]
+}

@@ -14,12 +14,12 @@ Herramienta de línea de comandos para monitorear, analizar y controlar el tráf
 
 ```bash
 # Clonar o copiar el proyecto
-cd NetworkTrafficManager
+cd ~/NetworkTrafficManager
 
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Opcional: instalar comando global
+# Instalar comando global (una sola vez)
 chmod +x netmanager
 sudo cp netmanager /usr/local/bin/
 ```
@@ -27,11 +27,11 @@ sudo cp netmanager /usr/local/bin/
 ## Uso
 
 ```bash
-# Ejecutar con permisos completos (recomendado)
-sudo python3 main.py
+# Simplemente escribe:
+netmanager
 
-# O si instalaste el comando global
-sudo netmanager
+# El sistema pide la contraseña sudo automáticamente si la necesita.
+# No es necesario escribir sudo manualmente.
 ```
 
 ## Menú Principal
@@ -123,8 +123,11 @@ NetworkTrafficManager/
 
 ## Permisos
 
-- **Sin sudo**: La mayoría de las funciones de lectura funcionan (monitoreo, interfaces, etc.)
-- **Con sudo**: Acceso completo incluyendo listar todas las conexiones y aplicar reglas de firewall
+El script `netmanager` detecta automáticamente si tiene permisos de root:
+- **Sin sudo**: La mayoría de funciones de lectura funcionan (monitoreo, interfaces, etc.)
+- **Con sudo**: El sistema pide la contraseña y obtiene acceso completo (conexiones, firewall con `iptables`)
+
+No necesitas escribir `sudo` manualmente.
 
 ## Dependencias
 
